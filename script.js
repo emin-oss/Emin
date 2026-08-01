@@ -1,4 +1,5 @@
 const STORAGE_KEY = 'emin-liste-eintraege';
+const THEME_STORAGE_KEY = 'themePreference';
 
 const form = document.getElementById('entryForm');
 const input = document.getElementById('entryInput');
@@ -6,8 +7,37 @@ const linesEl = document.getElementById('lines');
 const countEl = document.getElementById('count');
 const clearDoneBtn = document.getElementById('clearDone');
 const todayEl = document.getElementById('today');
+const themeToggleBtn = document.getElementById('themeToggle');
 
 let items = load();
+let theme = loadTheme();
+
+function loadTheme() {
+  try {
+    const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+    return savedTheme === 'dark' ? 'dark' : 'light';
+  } catch {
+    return 'light';
+  }
+}
+
+function applyTheme(nextTheme) {
+  document.documentElement.setAttribute('data-theme', nextTheme);
+
+  if (themeToggleBtn) {
+    const isDark = nextTheme === 'dark';
+    themeToggleBtn.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+    themeToggleBtn.setAttribute('aria-pressed', String(isDark));
+  }
+}
+
+function toggleTheme() {
+  theme = theme === 'dark' ? 'light' : 'dark';
+  localStorage.setItem(THEME_STORAGE_KEY, theme);
+  applyTheme(theme);
+}
+
+applyTheme(theme);
 
 todayEl.textContent = new Date().toLocaleDateString('de-DE', {
   weekday: 'long',
@@ -97,5 +127,7 @@ clearDoneBtn.addEventListener('click', () => {
   save();
   render();
 });
+
+themeToggleBtn?.addEventListener('click', toggleTheme);
 
 render();
