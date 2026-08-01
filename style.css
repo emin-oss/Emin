@@ -9,6 +9,16 @@
   font-size: 16px;
 }
 
+:root[data-theme='dark'] {
+  --paper: #1c201a;
+  --ink: #e4e8db;
+  --ink-soft: #a9b2a0;
+  --line: #485040;
+  --accent: #7f9d7f;
+  --accent-soft: #2b3328;
+  --done: #7f8b76;
+}
+
 * { box-sizing: border-box; }
 
 body {
@@ -58,6 +68,17 @@ body {
   margin: 0;
   font-size: 1.15rem;
   letter-spacing: 0.02em;
+}
+
+.theme-toggle {
+  margin-left: auto;
+  border: 1px solid var(--ink);
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  padding: 0.35rem 0.55rem;
+  cursor: pointer;
+  border-radius: 2px;
 }
 
 .sheet__date {
