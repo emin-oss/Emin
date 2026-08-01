@@ -16,3 +16,12 @@ Drag-and-drop zum Neusortieren
 Export der Liste als Textdatei
 Tastatur-Shortcut zum schnellen Hinzufügen
 Dark-Mode-Umschalter
+
+## Shopify Growth Operator (Phase 1)
+
+Implementierungsartefakte liegen unter:
+
+- `/home/runner/work/Emin/Emin/docs/shopify-growth/tracking-audit-checklist.md`
+- `/home/runner/work/Emin/Emin/docs/shopify-growth/top5-pdp-changes.md`
+- `/home/runner/work/Emin/Emin/docs/shopify-growth/dashboard-kpi-structure.md`
+- `/home/runner/work/Emin/Emin/docs/shopify-growth/daily-output-template.md`
