@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emin — Aufgaben</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sheet">
+    <header class="sheet__head">
+      <span class="sheet__mark">E</span>
+      <div>
+        <h1>Heutige Liste</h1>
+        <p class="sheet__date" id="today"></p>
+      </div>
+    </header>
+
+    <form class="entry" id="entryForm">
+      <input
+        type="text"
+        id="entryInput"
+        placeholder="Was steht an?"
+        autocomplete="off"
+        required
+      >
+      <button type="submit">Eintragen</button>
+    </form>
+
+    <ul class="lines" id="lines"></ul>
+
+    <footer class="sheet__foot">
+      <span id="count">0 Einträge</span>
+      <button id="clearDone" type="button">Erledigte löschen</button>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
